@@ -1,6 +1,6 @@
 package shoppingmall;
 
-
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
@@ -8,6 +8,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 @SpringBootApplication // 스프링 부트 사용 주입
 public class Appstart {
     public static void main(String[] args) {
-        SpringBootApplication.run(Appstart.class,args);
+        SpringApplication.run(Appstart.class,args);
     }
 }

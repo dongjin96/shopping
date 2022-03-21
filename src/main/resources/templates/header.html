@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" th:fragment="header" xmlns:th = "http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -19,13 +19,59 @@
 
     <!--헤더메뉴-->
     <div class ="container">
+
         <header th:href="@{/}" class="d-flex flex-wrap align-items-center justify-content center justify-content-md-between py-3 mb-4 border-bottom" >
           <a th:href="@{/}"class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
             Ansan
         </a>
-        </header>
-    </div>
 
+            <div class="col-md-5 text-end">
+                <a ><button class="btn btn-outline-info " data-bs-target="#modallogin" data-bs-toggle="modal">로그인</button></a>
+                <a ><button class="btn btn-outline-info">회원가입</button></a>
+                <a ><button class="btn btn-outline-info">로그아웃</button></a>
+                <a ><button class="btn btn-outline-info">마이페이지</button></a>
+
+            </div>
+
+        </header>
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li ><a  class="nav-link px-2 link-dark">outer</a></li>
+            <li ><a  class="nav-link px-2 link-dark">pants</a></li>
+            <li ><a  class="nav-link px-2 link-dark">best</a></li>
+            <li ><a  class="nav-link px-2 link-dark">ACC</a></li>
+        </ul>
+    </div>
+    <!--헤더 메뉴 end-->
+    <!--로그인 모달 -->
+
+    <div class="modal fade" id="modallogin" data-bs-keyboard="false" data-bs-backdrop="static" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content rounded-5 shadow">
+                <div class="modal-header p-5 pb-4 border-bottom-0">
+                    <h2 class="fw-bold mb-0">Ansan</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>    <!-- 닫기 버튼 -->
+                </div>
+
+                <div class="modal-body p-5 pt-0">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control rounded-4" id="login_m_id" placeholder="아이디">
+                        <label for="floatingInput">아이디</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control rounded-4" id="login_m_password" placeholder="비밀번호">
+                        <label for="floatingPassword">비밀번호</label>
+                    </div>
+                    <div id="loginfailmsg" class="text-danger text-center m-2"></div>       <!-- 로그인 실패시 메시지 -->
+                    <button class="w-100 mb-2 btn btn-lg rounded-4 btn-primary"  onclick="login()">로그인</button>  <!-- 로그인 버튼 -->
+
+                    <a th:href="@{/member/findid}"><small class="text-muted px-2">회원정보찾기</small></a>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--로그인모달-->
 
 </body>
 </html>
