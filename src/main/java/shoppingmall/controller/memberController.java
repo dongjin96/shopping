@@ -11,5 +11,6 @@ public class memberController {
      return "member/signup";
     }
 
+    @GetMapping("/member/signup")
 
 }
